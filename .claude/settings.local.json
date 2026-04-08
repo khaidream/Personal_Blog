@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Bash(dir \"d:\\\\前端\\\\Personal_blog\\\\public\" /b)",
+      "Bash(python -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(pip install:*)"
+    ]
+  }
+}
