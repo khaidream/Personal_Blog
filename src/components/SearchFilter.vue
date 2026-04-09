@@ -168,11 +168,6 @@ const clearSearch = () => {
   color: var(--text-secondary);
 }
 
-.tag:hover {
-  background: var(--accent-color);
-  color: white;
-}
-
 .tag.active {
   background: var(--accent-color);
   color: white;

@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container header-inner">
       <router-link to="/" class="logo">Khai Blog</router-link>
 
@@ -54,6 +54,7 @@ import { useAuth } from '@/composables/useAuth'
 const router = useRouter()
 const { isLoggedIn, username, checkStatus, logout } = useAuth()
 const showMobileMenu = ref(false)
+const isScrolled = ref(false)
 
 const toggleMobileMenu = () => {
   showMobileMenu.value = !showMobileMenu.value
@@ -67,6 +68,11 @@ const handleLogout = async () => {
   await logout()
   closeMobileMenu()
   router.push('/')
+}
+
+// 滚动检测
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
 }
 
 // 点击窗口其他位置关闭菜单
@@ -85,11 +91,13 @@ const handleEscKey = (e) => {
 
 onMounted(() => {
   checkStatus()
+  window.addEventListener('scroll', handleScroll)
   window.addEventListener('click', handleClickOutside)
   window.addEventListener('keydown', handleEscKey)
 })
 
 onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('click', handleClickOutside)
   window.removeEventListener('keydown', handleEscKey)
 })
@@ -97,11 +105,19 @@ onUnmounted(() => {
 
 <style scoped>
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.header.scrolled {
   background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom-color: var(--border-color);
 }
 
 .header-inner {
@@ -115,10 +131,6 @@ onUnmounted(() => {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
-}
-
-.logo:hover {
-  color: var(--accent-color);
 }
 
 .desktop-nav {

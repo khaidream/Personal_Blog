@@ -109,6 +109,7 @@ const filteredBlogs = computed(() => {
 <style scoped>
 .good-blogs {
   padding: 0;
+  padding-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
 }
 

@@ -137,15 +137,10 @@ button {
 .tag {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-sm);
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   color: var(--text-secondary);
   border-radius: 4px;
   font-size: 12px;
-}
-
-.tag:hover {
-  background: var(--accent-color);
-  color: white;
 }
 
 /* 标题 */

@@ -72,7 +72,7 @@ const filteredNotes = computed(() => {
   return result
 })
 
-const MONTHS = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
 const WEEKS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
 
 const getDateInfo = (dateStr) => {
@@ -98,6 +98,7 @@ const goToNote = (slug) => {
 
 <style scoped>
 .page-title {
+  padding-top: var(--header-height);
   font-size: 2rem;
   margin-bottom: var(--spacing-lg);
 }
@@ -158,7 +159,7 @@ const goToNote = (slug) => {
 
 .date-day {
   font-family: 'Microsoft YaHei', sans-serif;
-  font-size: 32px;
+  font-size: 26.25px;
   font-weight: bold;
   color: var(--text-primary);
   line-height: 1;
@@ -167,9 +168,16 @@ const goToNote = (slug) => {
 .date-month,
 .date-week {
   font-family: 'Instrument Sans', sans-serif;
-  font-size: 11px;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+.date-month {
+  font-size: 12.25px;
+}
+
+.date-week {
+  font-size: 10.5px;
 }
 
 @media (max-width: 768px) {

@@ -62,12 +62,19 @@ const handleSearch = () => {
 </script>
 
 <style scoped>
+.article-list {
+  padding-top: var(--header-height);
+}
+
 .page-title {
   font-size: 2rem;
   margin-bottom: var(--spacing-lg);
 }
 
 .grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }
 

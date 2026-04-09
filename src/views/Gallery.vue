@@ -155,6 +155,7 @@ onMounted(() => {
 <style scoped>
 .gallery {
   padding: 0;
+  padding-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
 }
 
