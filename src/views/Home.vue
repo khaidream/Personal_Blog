@@ -98,14 +98,6 @@ const latestArticles = computed(() => getLatestArticles(6))
   flex-direction: column;
 }
 
-.hero-icons {
-  margin-top: auto;
-  margin-bottom: 60px;
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-2xl);
-}
-
 .hero-icons .icon-item {
   display: flex;
   align-items: center;
@@ -146,6 +138,9 @@ const latestArticles = computed(() => getLatestArticles(6))
   object-fit: cover;
   margin-bottom: var(--spacing-lg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .hero-title {
@@ -155,6 +150,9 @@ const latestArticles = computed(() => getLatestArticles(6))
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
   letter-spacing: -1px;
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .hero-desc {
@@ -163,6 +161,31 @@ const latestArticles = computed(() => getLatestArticles(6))
   color: var(--text-primary);
   max-width: 500px;
   line-height: 1.6;
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-icons {
+  margin-top: auto;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2xl);
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Articles Section */

@@ -1,7 +1,12 @@
 <template>
   <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container header-inner">
-      <router-link to="/" class="logo">Khai Blog</router-link>
+      <router-link to="/" class="logo-link">
+        <div class="avatar-container">
+          <img src="/assets/image/avator.jpg" alt="avatar" />
+        </div>
+        <span class="logo">Khai Blog</span>
+      </router-link>
 
       <!-- 桌面端导航 -->
       <nav class="nav desktop-nav">
@@ -125,6 +130,27 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.avatar-container {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 40%;
+  overflow: hidden;
+}
+
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .logo {

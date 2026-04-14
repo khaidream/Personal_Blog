@@ -6,16 +6,16 @@ export const useToastStore = defineStore('toast', () => {
   let id = 0
 
   const addToast = (message, type = 'info', duration = 3000) => {
-    const id = ++id
-    toasts.value.push({ id, message, type })
+    const newId = ++id
+    toasts.value.push({ id: newId, message, type })
 
     if (duration > 0) {
       setTimeout(() => {
-        removeToast(id)
+        removeToast(newId)
       }, duration)
     }
 
-    return id
+    return newId
   }
 
   const removeToast = (id) => {
