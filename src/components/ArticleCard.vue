@@ -34,27 +34,28 @@ const formatDate = (dateStr) => {
 
 <style scoped>
 .article-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  border: none;
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .article-card:hover {
+  background: var(--bg-secondary);
   box-shadow: var(--shadow-hover);
   transform: translateX(4px);
 }
 
 .card-content {
-  padding: 14px;
+  padding: 10px 14px;
 }
 
 .card-meta {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 6px;
   flex-wrap: wrap;
 }
 
@@ -87,7 +88,7 @@ const formatDate = (dateStr) => {
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 15.75px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
@@ -97,13 +98,13 @@ const formatDate = (dateStr) => {
 
 .card-desc {
   color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 12.25px;
+  line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 6px;
 }
 
 .card-footer {

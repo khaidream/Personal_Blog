@@ -14,9 +14,10 @@
 
         <div class="notes-grid" v-if="filteredNotes.length > 0">
           <div
-            v-for="note in filteredNotes"
+            v-for="(note, index) in filteredNotes"
             :key="note.slug"
-            class="note-card"
+            class="note-card note-item"
+            :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
             @click="goToNote(note.slug)"
           >
             <div class="date-badge">
@@ -122,6 +123,22 @@ const goToNote = (slug) => {
   gap: var(--spacing-md);
   align-self: stretch;
   padding-left: 70px;
+}
+
+.note-item {
+  opacity: 0;
+  animation: fadeSlideIn 0.5s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .note-card {

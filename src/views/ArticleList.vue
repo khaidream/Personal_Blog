@@ -12,7 +12,13 @@
       />
 
       <div class="grid" v-if="filteredArticles.length > 0">
-        <ArticleCard v-for="article in filteredArticles" :key="article.slug" :article="article" />
+        <ArticleCard
+          v-for="(article, index) in filteredArticles"
+          :key="article.slug"
+          :article="article"
+          class="article-item"
+          :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
+        />
       </div>
 
       <div v-else class="empty-state">
@@ -74,8 +80,25 @@ const handleSearch = () => {
 .grid {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: 0;
   margin-top: var(--spacing-lg);
+}
+
+.article-item {
+  opacity: 0;
+  animation: fadeSlideIn 0.5s ease forwards;
+  max-width: 728px;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .empty-state {
