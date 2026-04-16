@@ -60,11 +60,13 @@ const formatDate = (dateStr) => {
 }
 
 .tag {
-  font-size: 12px;
+  font-size: 10.5px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   position: relative;
   padding-bottom: 2px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .tag::after {
@@ -80,6 +82,10 @@ const formatDate = (dateStr) => {
 
 .tag:hover::after {
   width: 100%;
+}
+
+.article-card:hover .tag {
+  background: var(--bg-secondary);
 }
 
 .read-time {
@@ -111,7 +117,7 @@ const formatDate = (dateStr) => {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
-  font-size: 13px;
+  font-size: 10.5px;
   color: var(--text-muted);
 }
 
