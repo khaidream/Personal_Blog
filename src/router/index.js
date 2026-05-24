@@ -29,6 +29,11 @@ const routes = [
     component: () => import('@/views/GoodBlogs.vue')
   },
   {
+    path: '/ai',
+    name: 'AIChat',
+    component: () => import('@/views/AIChat.vue')
+  },
+  {
     path: '/notes',
     name: 'Notes',
     component: () => import('@/views/Notes.vue')

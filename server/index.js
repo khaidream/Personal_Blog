@@ -2,7 +2,11 @@ import express from 'express'
 import cors from 'cors'
 import session from 'express-session'
 import bcrypt from 'bcryptjs'
+import dotenv from 'dotenv'
 import pool from './db.js'
+
+// 加载 .env 环境变量
+dotenv.config()
 
 const app = express()
 const PORT = 3001
@@ -442,6 +446,10 @@ app.get('/api/admin/notes/:id', isAuthenticated, async (req, res) => {
     res.status(500).json({ error: '获取手记失败' })
   }
 })
+
+// ========== AI 对话 API ==========
+import aiRouter from './routes/ai.js'
+app.use('/api/ai', aiRouter)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
