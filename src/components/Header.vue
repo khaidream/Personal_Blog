@@ -1,7 +1,8 @@
-<template>
+﻿<template>
   <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container header-inner">
       <router-link to="/" class="logo-link">
+        <ActiveAppIcon />
         <div class="avatar-container">
           <img src="/assets/image/avator.jpg" alt="avatar" />
         </div>
@@ -56,6 +57,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import ThemeToggle from './ThemeToggle.vue'
+import ActiveAppIcon from './ActiveAppIcon.vue'
 import { useAuth } from '@/composables/useAuth'
 
 const router = useRouter()

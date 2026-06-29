@@ -1,4 +1,4 @@
-import express from 'express'
+﻿import express from 'express'
 import cors from 'cors'
 import session from 'express-session'
 import bcrypt from 'bcryptjs'
@@ -450,6 +450,10 @@ app.get('/api/admin/notes/:id', isAuthenticated, async (req, res) => {
 // ========== AI 对话 API ==========
 import aiRouter from './routes/ai.js'
 app.use('/api/ai', aiRouter)
+
+// ========== 活跃应用图标 API ==========
+import activeAppRouter from './routes/activeApp.js'
+app.use('/api/active-app', activeAppRouter)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
