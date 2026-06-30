@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="home page">
     <!-- Hero Section -->
     <section class="hero">
@@ -31,7 +31,8 @@
       <div class="hero-content">
         <img src="/assets/image/avator.jpg" alt="khai" class="hero-avatar" />
         <h1 class="hero-title">Hi, I'm khai👋.</h1>
-        <p class="hero-desc">A NodeJS Full Stack &lt;Developer /&gt;</p>
+        <!-- <p class="hero-desc">A NodeJS Full Stack &lt;Developer /&gt;</p> -->
+        <p class="hero-desc">I orchestrate <span class="ideas">ideas</span> into products with <span class="ai-agents-wrap"><span class="ai-agents">✦AI Agents</span></span></p>
       </div>
     </section>
 
@@ -159,11 +160,86 @@ const latestArticles = computed(() => getLatestArticles(6))
   font-size: 31.5px;
   font-family: 'Instrument Sans', sans-serif;
   color: var(--text-primary);
-  max-width: 500px;
   line-height: 1.6;
+  white-space: nowrap;
   opacity: 0;
   animation: fadeSlideIn 0.6s ease forwards;
   animation-delay: 0.6s;
+}
+
+.ai-agents-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: inherit;
+  transform: translateY(-4px);
+  border-radius: 999px;
+  padding: 0 3px;
+}
+
+.ai-agents {
+  display: inline;
+  background: rgb(108, 140, 168);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  /* 玻璃质感底色 */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+/* 玻璃质感高光层 */
+.ai-agents::before {
+  content: '✦AI Agents';
+  position: absolute;
+  inset: 0;
+  background: rgb(108, 140, 168);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* 划过的斜光线 */
+.ai-agents-wrap::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(180, 200, 215, 0.55) 40%,
+    rgba(108, 140, 168, 0.45) 50%,
+    rgba(180, 200, 215, 0.55) 60%,
+    rgba(255, 255, 255, 0.5) 80%,
+    transparent 100%
+  );
+  filter: blur(10px);
+  transform: skewX(-20deg);
+  animation: shine 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 220%;
+  }
+}
+
+.ideas {
+  font-style: italic;
+  font-weight: 600;
+  color: rgb(108, 140, 168);
 }
 
 .hero-icons {
