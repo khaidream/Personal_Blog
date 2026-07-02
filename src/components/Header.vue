@@ -16,7 +16,6 @@
         <router-link to="/gallery" class="nav-link">相册</router-link>
         <router-link to="/notes" class="nav-link">手记</router-link>
        <router-link to="/blogs" class="nav-link">优质博客</router-link>
-       <router-link to="/ai" class="nav-link">ChatBot</router-link>
        <router-link v-if="isLoggedIn" to="/admin" class="nav-link">管理</router-link>
       </nav>
 
@@ -45,7 +44,6 @@
         <router-link to="/gallery" class="mobile-nav-link" @click="closeMobileMenu">相册</router-link>
         <router-link to="/notes" class="mobile-nav-link" @click="closeMobileMenu">手记</router-link>
        <router-link to="/blogs" class="mobile-nav-link" @click="closeMobileMenu">优质博客</router-link>
-       <router-link to="/ai" class="mobile-nav-link" @click="closeMobileMenu">AI</router-link>
        <router-link v-if="isLoggedIn" to="/admin" class="mobile-nav-link" @click="closeMobileMenu">管理</router-link>
         <router-link v-if="!isLoggedIn" to="/login" class="mobile-nav-link" @click="closeMobileMenu">登录</router-link>
       </nav>

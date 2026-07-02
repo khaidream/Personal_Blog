@@ -27,14 +27,9 @@ const routes = [
     path: '/blogs',
     name: 'GoodBlogs',
     component: () => import('@/views/GoodBlogs.vue')
-  },
- {
-   path: '/ai',
-   name: 'AIChat',
-   component: () => import('@/views/AIChat.vue')
  },
- {
-   path: '/notes',
+  {
+    path: '/notes',
     name: 'Notes',
     component: () => import('@/views/Notes.vue')
   },
