@@ -15,7 +15,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const API_BASE = 'http://localhost:3001'
+const API_BASE = ''
 const appName = ref('')
 const iconSrc = ref('')
 let timer = null

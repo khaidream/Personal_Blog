@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3001/api/admin'
+﻿const API_BASE = '/api/admin'
 
 export function useAdminNotes() {
   async function fetchNotes() {
