@@ -1,4 +1,8 @@
-﻿import mysql from 'mysql2/promise'
+﻿import dotenv from 'dotenv'
+import mysql from 'mysql2/promise'
+
+// 确保环境变量在创建连接池前加载
+dotenv.config()
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
